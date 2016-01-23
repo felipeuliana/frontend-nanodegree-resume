@@ -1,49 +1,62 @@
 /*
 This is empty on purpose! Your code to build the resume will go here.
  */
-var bio = {
-  contacts: {
-    mobile: '11 9.7034-3975',
-    email: 'v.uliana@gmail.com',
-    github: 'felipeuliana',
-  },
-  name: 'Felipe Uliana',
-  bioPic: 'images/me.jpg  ',
-  role: 'Web Developer & Designer',
-  skills: ['Web Development', 'Web Design'],
-  welcomeMessage: 'Hi there!'
+var work = {
+  "jobs": [
+    {
+      "employer": "CVC - Travels and Tourism",
+      "title": "Web Designer",
+      "location": "St. André",
+      "dates": "2014-2016",
+      "description": "Web Designer at CVC"
+    }
+  ]
 };
 
-var work = {};
+var projects = {
+  "projects": [
+    {
+      "title": "Portfolio",
+      "dates": "2016",
+      "description": "Felipe Uliana Portfolio",
+      "images": [
+        "images/me.jpg"
+      ]
+    }
+  ]
+};
 
-work.city = 'St. André';
-work.employer = 'CVC - Travels and Tourism';
-work.jobPosition = 'Web Designer';
-work.yearsWorked = 1;
+var bio = {
+  "name": "Felipe Uliana",
+  "role": "Web Developer and Designer",
+  "welcomeMessage": "Hello There!",
+  "contacts": {
+    "mobile": "11 9.7034-3975",
+    "email": "v.uliana@gmail.com",
+    "github": "felipeuliana",
+    "location": "Roque Del Dono Street, 180"
+  }
+};
 
 var education = {
   "schools": [
     {
       "name": "UniSant\'Anna",
-      "city": "S. Paulo",
-      "degree": "Techology",
-      "major": ["Graphic Design"]
+      "location": "Voluntários da Pátria Street",
+      "degree": "Technology Degree",
+      "majors": [
+        "Graphic Design"
+      ],
+      "dates": "2011-2012",
+      "url": "www.unisantanna.br"
+    }
+  ],
+  "onlineCourses": [
+    {
+      "title": "JavaScript Basics",
+      "school": "Udacity",
+      "dates": "2016",
+      "url": "www.udacity.com/courses/ud804"
     }
   ]
 };
-
-var formattedName = HTMLheaderName.replace('%data%', bio.name);
-var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
-
-var formattedWorkEmployer = HTMLworkEmployer.replace('%data%', work.employer);
-var formattedWorkPosition = HTMLworkTitle.replace('%data%', work.jobPosition);
-var formattedEducationName = HTMLschoolName.replace('%data%', education['name']);
-var formattedEducationSchool = HTMLschoolDegree.replace('%data%', education['lastSchool']);
-
-$('#header').append(formattedName);
-$('#header').append(formattedRole);
-
-$('#workExperience').append(formattedWorkEmployer + formattedWorkPosition);
-$('#education').append(formattedEducationName + formattedEducationSchool);
-
-debugger;
