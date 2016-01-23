@@ -21,12 +21,16 @@ work.employer = 'CVC - Travels and Tourism';
 work.jobPosition = 'Web Designer';
 work.yearsWorked = 1;
 
-var education = {};
-
-education['city'] = 'S. Paulo';
-education['name'] = 'Techology Degree at Graphic Design';
-education['lastSchool'] = 'UniSant\'Anna';
-education['years'] = '2011-2012';
+var education = {
+  "schools": [
+    {
+      "name": "UniSant\'Anna",
+      "city": "S. Paulo",
+      "degree": "Techology",
+      "major": ["Graphic Design"]
+    }
+  ]
+};
 
 var formattedName = HTMLheaderName.replace('%data%', bio.name);
 var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
