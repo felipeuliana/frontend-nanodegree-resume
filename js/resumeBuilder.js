@@ -10,13 +10,36 @@ var bio = {
   name: 'Felipe Uliana',
   bioPic: 'images/me.jpg  ',
   role: 'Web Developer & Designer',
-  skills: ['Web Developer', 'Web Design'],
+  skills: ['Web Development', 'Web Design'],
   welcomeMessage: 'Hi there!'
-
 };
+
+var work = {};
+
+work.city = 'St. André';
+work.employer = 'CVC - Travels and Tourism';
+work.jobPosition = 'Web Designer';
+work.yearsWorked = 1;
+
+var education = {};
+
+education['city'] = 'S. Paulo';
+education['name'] = 'Techology Degree at Graphic Design';
+education['lastSchool'] = 'UniSant\'Anna';
+education['years'] = '2011-2012';
 
 var formattedName = HTMLheaderName.replace('%data%', bio.name);
 var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
 
+var formattedWorkEmployer = HTMLworkEmployer.replace('%data%', work.employer);
+var formattedWorkPosition = HTMLworkTitle.replace('%data%', work.jobPosition);
+var formattedEducationName = HTMLschoolName.replace('%data%', education['name']);
+var formattedEducationSchool = HTMLschoolDegree.replace('%data%', education['lastSchool']);
+
 $('#header').append(formattedName);
 $('#header').append(formattedRole);
+
+$('#workExperience').append(formattedWorkEmployer + formattedWorkPosition);
+$('#education').append(formattedEducationName + formattedEducationSchool);
+
+debugger;
