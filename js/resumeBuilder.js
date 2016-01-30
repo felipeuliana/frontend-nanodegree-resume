@@ -35,7 +35,11 @@ var bio = {
     "email": "v.uliana@gmail.com",
     "github": "felipeuliana",
     "location": "Roque Del Dono Street, 180"
-  }
+  },
+  "skills": [
+    "Front End Development",
+    "Web Design"
+  ]
 };
 
 var education = {
@@ -59,4 +63,19 @@ var education = {
       "url": "www.udacity.com/courses/ud804"
     }
   ]
+};
+
+var placeHolderString = '%data%';
+
+var formattedName = HTMLheaderName.replace(placeHolderString, 'Felipe Uliana');
+var formattedRole = HTMLheaderRole.replace(placeHolderString, 'Web Develope & Designer');
+
+$('#header').append(formattedName, formattedRole);
+
+if (bio.skills.length) {
+  $('#header').append(HTMLskillsStart);
+  var formattedSkill = HTMLskills.replace(placeHolderString, bio.skills[0]);
+  $('#skills').append(formattedSkill);
+  formattedSkill = HTMLskills.replace(placeHolderString, bio.skills[1]);
+  $('#skills').append(formattedSkill);
 };
