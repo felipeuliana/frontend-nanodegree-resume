@@ -95,14 +95,24 @@ if (bio.skills.length) {
   $('#skills').append(formattedSkill);
 };
 
-for (job in work.jobs) {
-  if (work.jobs.hasOwnProperty(job)) {
-    $('#workExperience').append(HTMLworkStart);
-    var formattedEmployer = HTMLworkEmployer.replace(placeHolderString, work.jobs[job].employer);
-    var formattedWorkTitle = HTMLworkTitle.replace(placeHolderString, work.jobs[job].title);
-    var formattedWorkDates = HTMLworkDates.replace(placeHolderString, work.jobs[job].dates);
-    var formattedWorkLocation = HTMLworkLocation.replace(placeHolderString, work.jobs[job].location);
-    var formattedWorkDescription = HTMLworkDescription.replace(placeHolderString, work.jobs[job].description);
-    $('.work-entry:last').append(formattedEmployer + formattedWorkTitle, formattedWorkDates , formattedWorkLocation , formattedWorkDescription);
+function displayWork () {
+  for (job in work.jobs) {
+    if (work.jobs.hasOwnProperty(job)) {
+      $('#workExperience').append(HTMLworkStart);
+      var formattedEmployer = HTMLworkEmployer.replace(placeHolderString, work.jobs[job].employer);
+      var formattedWorkTitle = HTMLworkTitle.replace(placeHolderString, work.jobs[job].title);
+      var formattedWorkDates = HTMLworkDates.replace(placeHolderString, work.jobs[job].dates);
+      var formattedWorkLocation = HTMLworkLocation.replace(placeHolderString, work.jobs[job].location);
+      var formattedWorkDescription = HTMLworkDescription.replace(placeHolderString, work.jobs[job].description);
+      $('.work-entry:last').append(formattedEmployer + formattedWorkTitle, formattedWorkDates , formattedWorkLocation , formattedWorkDescription);
+    };
   };
-};
+}
+
+displayWork();
+
+$(document).click(function (loc) {
+  var x = loc.pageX;
+  var y = loc.pageY;
+  logClicks(x, y);
+})
