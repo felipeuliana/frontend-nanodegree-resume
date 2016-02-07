@@ -41,8 +41,9 @@ var bio = {
     "mobile": "11 9.7034-3975",
     "email": "v.uliana@gmail.com",
     "github": "felipeuliana",
-    "location": "Roque Del Dono Street, 180"
+    "location": "São Paulo, Brasil"
   },
+  "pic": 'images/me.jpg',
   "skills": [
     "Front End Development",
     "Web Design"
@@ -74,13 +75,13 @@ var education = {
 
 var placeHolderString = '%data%';
 
-var formattedName = HTMLheaderName.replace(placeHolderString, 'Felipe Uliana');
-var formattedRole = HTMLheaderRole.replace(placeHolderString, 'Web Developer & Designer');
-var formattedMobile = HTMLmobile.replace(placeHolderString, '11 9.7034-3975');
-var formattedEmail = HTMLemail.replace(placeHolderString, 'v.uliana@gmail.com');
-var formattedGithub = HTMLgithub.replace(placeHolderString, 'felipeuliana');
-var formattedLocation = HTMLlocation.replace(placeHolderString, 'São Paulo, Brasil');
-var formattedPic = HTMLbioPic.replace(placeHolderString, 'images/me.jpg');
+var formattedName = HTMLheaderName.replace(placeHolderString, bio.name);
+var formattedRole = HTMLheaderRole.replace(placeHolderString, bio.role);
+var formattedMobile = HTMLmobile.replace(placeHolderString, bio.contacts.mobile);
+var formattedEmail = HTMLemail.replace(placeHolderString, bio.contacts.email);
+var formattedGithub = HTMLgithub.replace(placeHolderString, bio.contacts.github);
+var formattedLocation = HTMLlocation.replace(placeHolderString, bio.contacts.location);
+var formattedPic = HTMLbioPic.replace(placeHolderString, bio.pic);
 
 $('#header').prepend(formattedName, formattedRole);
 $('#header').append(formattedPic);
@@ -116,3 +117,13 @@ $(document).click(function (loc) {
   var y = loc.pageY;
   logClicks(x, y);
 })
+
+function inName(name) {
+  name = name.trim().split(' ');
+
+  name[1] = name[1].toUpperCase();
+  name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
+  return name.join(' ');
+}
+
+// $('#main').append(internationalizeButton);
