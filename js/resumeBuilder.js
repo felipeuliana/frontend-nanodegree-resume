@@ -27,10 +27,30 @@ var projects = {
       "dates": "2016",
       "description": "Felipe Uliana Portfolio",
       "images": [
-        "images/me.jpg"
+        "https://colorlib.com/wp/wp-content/uploads/sites/2/foliogine-lite-portfolio-theme.jpg"
       ]
     }
-  ]
+  ],
+  "display": function() {
+    var projectsSection = $('#projects');
+
+    projectsSection.append(HTMLprojectStart);
+
+    for (project in projects.projects) {
+      var projectEntry = $('.project-entry').last();
+      var projectTitle = HTMLprojectTitle.replace(placeHolderString, projects.projects[project].title);
+      var projectDates = HTMLprojectDates.replace(placeHolderString, projects.projects[project].dates);
+      var projectDescription = HTMLprojectDescription.replace(placeHolderString, projects.projects[project].description);
+
+      if (projects.projects[project].images.length > 0) {
+        for (image in projects.projects[project].images) {
+          var projectImage = HTMLprojectImage.replace(placeHolderString, projects.projects[project].images[image]);
+        }
+      }
+
+      projectEntry.append(projectTitle, projectDates, projectDescription, projectImage);
+    }
+  }
 };
 
 var bio = {
@@ -125,5 +145,7 @@ function inName(name) {
   name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
   return name.join(' ');
 }
+
+projects.display();
 
 // $('#main').append(internationalizeButton);
