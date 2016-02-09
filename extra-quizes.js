@@ -21,6 +21,12 @@ function incrementArrayItem (arr) {
 
 incrementArrayItem(sampleArray);
 
+$(document).click(function (loc) {
+  var x = loc.pageX;
+  var y = loc.pageY;
+  logClicks(x, y);
+})
+
 // transform a mixed string separated by a space into an string of two names
 // the first capitalized and the second in uppercase
 var str = 'cAmEROn PittMAN';
