@@ -33,6 +33,7 @@ var bio = {
     $('#header').append(formattedPic);
 
     $('#topContacts').append(formattedMobile , formattedEmail , formattedGithub, formattedLocation);
+    $('#footerContacts').append(formattedMobile , formattedEmail , formattedGithub, formattedLocation);
 
     if (bio.skills.length) {
       $('#header').append(HTMLskillsStart);
